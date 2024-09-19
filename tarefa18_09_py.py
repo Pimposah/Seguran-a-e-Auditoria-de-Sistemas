@@ -26,14 +26,3 @@ message = "mensagem_confidencial"
 hmac_value = hmac_auth(key, message)
 
 print(f"HMAC: {hmac_value}")
-
-# Função para verificar HMAC
-def verify_hmac(key, message, hmac_to_verify):
-    generated_hmac = hmac_auth(key, message)
-    return hmac.compare_digest(generated_hmac, hmac_to_verify)
-
-# Exemplo de verificação
-hmac_to_verify = hmac_auth(key, message)
-is_valid = verify_hmac(key, message, hmac_to_verify)
-
-print(f"O HMAC é válido? : {is_valid}")
